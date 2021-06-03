@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from gestao.co.in/site/restaurant/test-restaurant/7 by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 02 Jun 2021 06:57:25 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <!-- METAS -->
+    <!-- Required meta tags -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="Data">
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- PAGE TITLE ARE SAFE. SINCE THEY ARE BEING GENERATED INSIDE THE SYSTEM -->
+<title>Restaurant | Gestão</title>
+<link rel="shortcut icon" href="../../../uploads/system/uXwK4C35LgYUBMNzVxec.jpg">
+    <!-- STYLES -->
+    <!-- Bootstrap CSS -->
+<link rel="stylesheet" href="../../../assets/frontend/default/css/bootstrap.min.css">
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700,900" rel="stylesheet">
+
+<!-- Simple line Icon -->
+<link rel="stylesheet" href="../../../assets/frontend/default/css/simple-line-icons.css">
+
+<!-- Themify Icon -->
+<link rel="stylesheet" href="../../../assets/frontend/default/css/themify-icons.css">
+
+<!-- Fontawesome Icon -->
+<link rel="stylesheet" href="../../../assets/frontend/default/css/font-awesome.min.css">
+
+<!-- Hover Effects -->
+<link rel="stylesheet" href="../../../assets/frontend/default/css/set1.css">
+
+<!-- Main CSS -->
+<link rel="stylesheet" href="../../../assets/frontend/default/css/style.css">
+
+<!-- Toastr -->
+<link rel="stylesheet" href="../../../assets/global/toastr/toastr.css">
+
+<!-- Page wise style -->
+    <!-- Swipper Slider -->
+<link rel="stylesheet" href="../../../assets/frontend/default/css/swiper.min.css">
+<!-- Magnific Popup CSS -->
+<link rel="stylesheet" href="../../../assets/frontend/default/css/magnific-popup.css">
+
+<!-- LEAFLET CSS -->
+<link rel="stylesheet" href="../../../assets/global/leaflet/leaflet.css">
+
+<style media="screen">
+  * {
+    min-width: 0;
+    min-height: 0;
+}
+  .food-item-card {
+    box-shadow: 0px 3px 40px 0 rgba(206, 205, 205, 0.3);
+  }
+
+  .reserve-rating {
+    margin-top: -6px;
+    font-size: 18px;
+  }
+  .itemCard{
+  width:100%;
+  height:180px;
+  object-fit: cover;
+  border-top-left-radius:10px;
+  border-top-right-radius:10px;
+  }
+
+  .popup {
+    width: 100%;
+    height: 100%;
+    display: none;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background: rgba(0, 0, 0, 0.75);
+    z-index: 1070;
+  }
+
+  .popup {
+    text-align: center;
+  }
+
+  .popup:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    margin-right: -4px;
+    vertical-align: middle;
+  }
+
+  .popup-inner {
+    display: inline-block;
+    text-align: left;
+    vertical-align: middle;
+    position: relative;
+    max-width: 700px;
+    width: 90%;
+    padding: 40px;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 1);
+    border-radius: 3px;
+    background: #fff;
+    text-align: center;
+  }
+
+  .popup-inner h1 {
+    font-family: 'Roboto Slab', serif;
+    font-weight: 700;
+  }
+
+  .popup-inner p {
+    font-size: 24px;
+    font-weight: 400;
+  }
+
+  .popup-close {
+    width: 34px;
+    height: 34px;
+    padding-top: 4px;
+    display: inline-block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    -webkit-transform: translate(50%, -50%);
+    transform: translate(50%, -50%);
+    border-radius: 100%;
+    background: transparent;
+    border: solid 4px #808080;
+  }
+
+  .popup-close:after,
+  .popup-close:before {
+    content: "";
+    position: absolute;
+    top: 11px;
+    left: 5px;
+    height: 4px;
+    width: 16px;
+    border-radius: 30px;
+    background: #808080;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+  .popup-close:after {
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+
+  .popup-close:hover {
+    -webkit-transform: translate(50%, -50%) rotate(180deg);
+    transform: translate(50%, -50%) rotate(180deg);
+    background: #f00;
+    text-decoration: none;
+    border-color: #f00;
+  }
+
+  .popup-close:hover:after,
+  .popup-close:hover:before {
+    background: #fff;
+  }
+
+  #map {
+    height: 230px;
+  }
+  @media (max-width: 576px) {       
+        .itemCard{            
+            width:100%;
+            height:230px !important;
+            object-fit: cover;      
+
+
+        }
+    }
+</style>
+
+<!-- Custom MODAL CSS -->
+<link rel="stylesheet" href="../../../assets/frontend/default/css/modal.css">
+
+<!-- Custom CSS -->
+<link rel="stylesheet" href="../../../assets/frontend/default/css/custom.css"></head>
+<body>
+    <!-- MAIN CONTENT -->
+    
+<!-- <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> -->
+<!-- NAVIGATION BAR -->
+<div class="dark-bg sticky-top">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <a class="navbar-brand" href="../../../index.html"> <img src="../../../uploads/system/wDLdQ5Cmc4hgb7e2a8VX.jpg" class="system-icon"> <span class="d-none d-sm-inline-block">Gestão</span> </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="icon-menu"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                        <ul class="navbar-nav">
+                            <!-- <li class="nav-item">
+                                <a class="btn btn-outline-light top-btn" href="https://gestao.co.in/auth/registration/driver">Become A Delivery Man</a>
+                            </li> -->
+                            <li class="nav-item">
+                                <a class="nav-link" href="../../../index.html">Home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Restaurants                                    <span class="icon-arrow-down"></span>
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item" href="../../restaurants/popular.html">Trending</a>
+                                    <a class="dropdown-item" href="../../restaurants/recent.html">Recently added</a>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../../../login.html">Login</a>
+                            </li>
+                            <!-- <li>
+                                <a href="https://gestao.co.in/cart" class="btn btn-outline-light cart-btn"><span class="cart-items" id="#cart-items">0</span><span class="ti-shopping-cart"></span></a>
+                            </li> -->
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- RESTAURANT GALLERY -->
+<div>
+    <!-- Swiper -->
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                        <a href="../../../uploads/restaurant/gallery/placeholder.png" class="grid image-link">
+                        <img style="width:100%;height:414px; object-fit:fill;" src="../../../uploads/restaurant/gallery/placeholder.png" class="" alt="#">
+                    </a>
+                </div>
+                            <div class="swiper-slide">
+                                        <a href="../../../uploads/restaurant/gallery/placeholder.png" class="grid image-link">
+                        <img style="width:100%;height:414px; object-fit:fill;" src="../../../uploads/restaurant/gallery/placeholder.png" class="" alt="#">
+                    </a>
+                </div>
+                            <div class="swiper-slide">
+                                        <a href="../../../uploads/restaurant/gallery/placeholder.png" class="grid image-link">
+                        <img style="width:100%;height:414px; object-fit:fill;" src="../../../uploads/restaurant/gallery/placeholder.png" class="" alt="#">
+                    </a>
+                </div>
+                            <div class="swiper-slide">
+                                        <a href="../../../uploads/restaurant/gallery/placeholder.png" class="grid image-link">
+                        <img style="width:100%;height:414px; object-fit:fill;" src="../../../uploads/restaurant/gallery/placeholder.png" class="" alt="#">
+                    </a>
+                </div>
+                            <div class="swiper-slide">
+                                        <a href="../../../uploads/restaurant/gallery/placeholder.png" class="grid image-link">
+                        <img style="width:100%;height:414px; object-fit:fill;" src="../../../uploads/restaurant/gallery/placeholder.png" class="" alt="#">
+                    </a>
+                </div>
+                            <div class="swiper-slide">
+                                        <a href="../../../uploads/restaurant/gallery/placeholder.png" class="grid image-link">
+                        <img style="width:100%;height:414px; object-fit:fill;" src="../../../uploads/restaurant/gallery/placeholder.png" class="" alt="#">
+                    </a>
+                </div>
+                    </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination swiper-pagination-white"></div>
+        <!-- Add Arrows -->
+        <div class="swiper-button-next swiper-button-white"></div>
+        <div class="swiper-button-prev swiper-button-white"></div>
+    </div>
+</div>
+
+
+<style>
+.img-scale{
+    width: 100%;
+  height: auto;
+}
+</style>
+<!-- RESTAURANT TITLE HEADER -->
+<section class="reserve-block">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <h5 class="mb-3">
+          Test Restaurant          <div class="reserve-rating">
+            <span>0</span>
+          </div>
+        </h5>
+        <div class="reserve-description">
+                                    <label class="custom-checkbox">
+                <span class="ti-check-box text-danger"></span>
+                <span class="custom-control-description">
+                  Italian                </span>
+              </label>
+                                        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="d-block">
+          <p class="reserve-description text-dark d-block text-right">Delivery charge : <strong>Free</strong>.</p>
+          <!-- <p class="reserve-description text-dark d-block text-right">Maximum time to deliver : <strong>01:00</strong> Minutes.</p> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- MAIN CONTENT -->
+<section class="light-bg booking-details_wrap">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-9 responsive-wrap" style="height:750px; overflow-y:scroll">
+        
+        <!-- REVIEW PORTION -->
+                <!-- <div class="booking-checkbox_wrap mt-4">
+          <h5> 0 Reviews</h5>
+
+                  </div> -->
+      </div>
+      <div class="col-md-3 responsive-wrap">
+        <div class="contact-info">
+          <div id="map"> </div>
+          
+          <div class="address" id="address_click">
+            <span class="icon-location-pin"></span>
+            <p>Not found</p>
+          </div>
+          <div class="address">
+            <span class="icon-screen-smartphone"></span>
+            <p>Login to Get Contact Number.</p>
+          </div>
+          <div class="address">
+            <span class="icon-link"></span>
+            <p><a href="#" target="_blank" class="text-body">Not found</a></p>
+          </div>
+          <div class="address pb-3">
+            <span class="icon-clock"></span>
+            <p>
+                              Wednesday :
+                                  <span class="closed-now">CLOSED NOW</span>
+                                          </p>
+          </div>
+        </div>
+
+        <div class="follow">
+          <div class="follow-img">
+            <h6>Availability</h6>
+          </div>
+          <div class="restaurant-schedule">
+                        <table class="w-100">
+                              <tr class="text-center">
+                  <td class="w-50 restaurant-day-schedule">Saturday</td>
+                  <td class="w-50 restaurant-time-schedule">
+                                          12 pm - 11 pm                                      </td>
+                </tr>
+                              <tr class="text-center">
+                  <td class="w-50 restaurant-day-schedule">Sunday</td>
+                  <td class="w-50 restaurant-time-schedule">
+                                          <span class="text-danger">Closed</span>
+                                      </td>
+                </tr>
+                              <tr class="text-center">
+                  <td class="w-50 restaurant-day-schedule">Monday</td>
+                  <td class="w-50 restaurant-time-schedule">
+                                          <span class="text-danger">Closed</span>
+                                      </td>
+                </tr>
+                              <tr class="text-center">
+                  <td class="w-50 restaurant-day-schedule">Tuesday</td>
+                  <td class="w-50 restaurant-time-schedule">
+                                          <span class="text-danger">Closed</span>
+                                      </td>
+                </tr>
+                              <tr class="text-center">
+                  <td class="w-50 restaurant-day-schedule">Wednesday</td>
+                  <td class="w-50 restaurant-time-schedule">
+                                          <span class="text-danger">Closed</span>
+                                      </td>
+                </tr>
+                              <tr class="text-center">
+                  <td class="w-50 restaurant-day-schedule">Thursday</td>
+                  <td class="w-50 restaurant-time-schedule">
+                                          <span class="text-danger">Closed</span>
+                                      </td>
+                </tr>
+                              <tr class="text-center">
+                  <td class="w-50 restaurant-day-schedule">Friday</td>
+                  <td class="w-50 restaurant-time-schedule">
+                                          <span class="text-danger">Closed</span>
+                                      </td>
+                </tr>
+                          </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    
+</section>
+
+<style>
+details summary::-webkit-details-marker {
+  display:none;
+}
+summary::marker {
+    display:none;
+}
+details > summary {
+  list-style: none;
+}
+details > summary::-webkit-details-marker {
+  display: none;
+}
+
+#arrow{
+  float: right;
+  
+}
+.fa-chevron-down:before{
+  position: relative;
+    top: -30px;
+}
+.img-scale{
+  width: 50%
+}
+.follow-img{
+  padding: 5px 16px;
+}
+.follow-img h6 {
+    margin: 10px 0 0;
+}
+
+</style>    <!-- FOOTER -->
+    <style>
+.footer-heading{
+    font-weight:800px;
+    color:white;
+    font-size:20px;
+    padding-bottom:10px;
+}
+.footer-p{
+    font-weight:400px;
+    color:white;
+    font-size:15px;
+}
+.footer-contact{
+    color:white;
+    font-size:20px;
+    padding:5px 0px;
+    display:flex; justify-content:start;align-items:center;
+}
+@media (max-width: 768px) {
+    .footer-heading,.footer-p, .footer-contact{
+        text-align:center !important;
+        padding-top:20px !important;
+        justify-content:center;
+    }  
+    .copyright{
+        text-align:center !important;
+    }
+}
+</style>
+<!--============================= FOOTER =============================-->
+<footer class="main-block dark-bg">
+    <!-- <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-12">
+                <div class="copyright">
+                    <ul>
+                        <li><a href="https://www.facebook.com/gestaogoa"><span class="ti-facebook"></span></a></li>
+                        <li><a href="https://twitter.com/DigitCure/"><span class="ti-twitter-alt"></span></a></li>
+                        <li><a href="https://instagram.com/gestao_goa?igshid=6lojozjhfv70"><span class="ti-instagram"></span></a></li>
+                    </ul>
+                    <ul class="footer-page-links">
+                        <li><a href="https://gestao.co.in/site/about_us">About us</a></li>
+                        <li><a href="https://gestao.co.in/site/privacy_policy">Privacy policy</a></li>
+                        <li><a href="https://gestao.co.in/site/terms_and_conditions">Terms and conditions</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- <div class="select mt-3">
+                <select name="slct" id="slct" onchange="switch_language(this.value)" class="language-selector">
+                    <option disabled>Choose language</option>
+                                            <option value="en" selected>English</option>
+                                            <option value="bn" >Bengali</option>
+                                            <option value="fr" >French</option>
+                                            <option value="es" >Espanol</option>
+                                    </select>
+            </div> 
+        </div>
+        <div style="text-align:center;padding-top:20px"> 
+            <p><a href="https://digitcure.com/" target="_blank">&copyDigit Cure ®</a></p>
+        </div>
+    </div> -->
+
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div style="display:flex; justify-content:center; align-item:center" class="col-md-3">
+                <img width=150px height=150px src="../../../uploads/system/wDLdQ5Cmc4hgb7e2a8VX.jpg" />
+            </div>
+            <div class="col-md-3">
+                <h6 class="footer-heading">COMPANY</h6>
+                <a class="footer-p" href="#"><p>Who we are</p></a>
+                <a class="footer-p" href="#"><p>Blog</p></a>
+                <a class="footer-p" href="#"><p>Report Fraud</p></a>    
+             </div>
+            <!-- <div class="col-md-2">
+                <h6 class="footer-heading">FOR FOODIES</h6>
+                <a class="footer-p" href="#"><p>Code of Conduct</p></a>
+                <a class="footer-p" href="#"><p>Community</p></a>
+                <a class="footer-p" href="#"><p>Blogger Help</p></a>
+                <a class="footer-p" href="#"><p>Mobile Apps</p></a>
+            </div>
+            <div class="col-md-2">
+                <h6 class="footer-heading">FOR RESTAURANTS</h6>
+                <a class="footer-p" href="#"><p>Add Restaurant</p></a>
+                <a class="footer-p" href="#"><p>Business App</p></a>
+                <a class="footer-p" href="#"><p>Restaurant Widgets</p></a>
+                <a class="footer-p" href="#"><p>Products of Business</p></a>
+            </div> -->
+            <div class="col-md-3">
+                <h6 class="footer-heading">FOR CUSTOMERS</h6>
+                <a class="footer-p" href="#"><p>Privacy</p></a>
+                <a class="footer-p" href="#"><p>Terms</p></a>
+                <a class="footer-p" href="#"><p>Security</p></a>
+            </div>
+            <div style="text-align:left" class="col-md-3 copyright">
+                <h6 class="footer-heading">CONTACT US</h6>
+                <a class="footer-contact"  href="mailto:contact@gestao.com"><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp; contact@gestao.com</a>
+                <a class="footer-contact"  href="tel:+917774828818"><i class="fa fa-volume-control-phone" aria-hidden="true"></i>&nbsp;+91 9999999999</a>
+                <h6 style="margin-top:20px" class="footer-heading">GET SOCIAL</h6>
+                <ul>
+                        <li><a href="https://www.facebook.com/gestaogoa"><span class="ti-facebook"></span></a></li>
+                        <li><a href="https://twitter.com/DigitCure/"><span class="ti-twitter-alt"></span></a></li>
+                        <li><a href="https://instagram.com/gestao_goa?igshid=6lojozjhfv70"><span class="ti-instagram"></span></a></li>
+                    </ul>
+            </div>
+            
+        </div>
+        <div style="text-align:center;padding-top:20px"> 
+            <p class="footer-p">Copyright © 2021 Gestao. All rights reserved.| Powered by <a class="footer-p" href="www.digitcure.html" target="_blank">Digit Cure</a></p>
+        </div>
+    </div>
+</footer>
+<!--============================= FOOTER =============================-->
+    <!-- SCRIPTS -->
+     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+
+<script src="../../../../code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="../../../../cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="../../../../maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="../../../../kit.fontawesome.com/feda5be979.js" crossorigin="anonymous"></script>
+ <!-- <script src="https://gestao.co.in/assets/frontend/default/js/jquery-3.2.1.min.js"></script>
+ <script src="https://gestao.co.in/assets/frontend/default/js/popper.min.js"></script>
+ <script src="https://gestao.co.in/assets/frontend/default/js/bootstrap.min.js"></script> -->
+
+ <!-- Toastr -->
+ <script src="../../../assets/global/toastr/toastr.min.js"></script>
+ <!-- Page wise script -->
+      <!-- Magnific popup JS -->
+<script src="../../../../ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="../../../../ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<link href="../../../../ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css" rel="stylesheet"/>
+
+<!-- <script src="https://gestao.co.in/assets/frontend/default/js/jquery.magnific-popup.js"></script> -->
+<script src="../../../../cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.0.0/jquery.magnific-popup.min.js" integrity="sha512-+m6t3R87+6LdtYiCzRhC5+E0l4VQ9qIT1H9+t1wmHkMJvvUQNI5MKKb7b08WL4Kgp9K0IBgHDSLCRJk05cFUYg==" crossorigin="anonymous"></script>
+<!-- Swipper Slider JS -->
+<script src="../../../../cdnjs.cloudflare.com/ajax/libs/Swiper/6.5.8/swiper-bundle.min.js" integrity="sha512-sAHYBRXSgMOV2axInO6rUzuKKM5SkItFLlLHQ8YjRD+FBwowtATOs4njP9oim3/MzyAGrB52SLDjpAOLcOT9TA==" crossorigin="anonymous"></script>
+<!-- <script src="https://gestao.co.in/assets/frontend/default/js/swiper.min.js"></script> -->
+
+<!-- Leaflet JS -->
+<!-- <script src="https://gestao.co.in/assets/global/leaflet/leaflet.js"></script> -->
+<script src="../../../../unpkg.com/leaflet%401.7.1/dist/leaflet.js"></script>
+<script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMsl3ztj-9_jwiczAnwTUoh5AM0oBQH1I&amp;callback=initMap&amp;libraries=&amp;v=weekly"
+      async
+    ></script>
+
+<!-- INIT JS -->
+<script src="../../../assets/frontend/default/js/init.js"></script>
+<script>
+  "use strict";
+  var width;
+  if(screen.width < 768)
+  width = 1;
+  else 
+  width = 3;
+
+  var swiper = new Swiper('.swiper-container', {
+    slidesPerView:width,
+    slidesPerGroup: width,
+    loop: true,
+    loopFillGroupWithBlank: true,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
+
+  if ($('.image-link').length) {
+    $('.image-link').magnificPopup({
+      type: 'image',
+      gallery: {
+        enabled: true
+      }
+    });
+  }
+  if ($('.image-link2').length) {
+    $('.image-link2').magnificPopup({
+      type: 'image',
+      gallery: {
+        enabled: true
+      }
+    });
+  }
+
+  // INITIALIZE TOOLTIPS
+  initToolTip();
+
+  // CART OPERATIONS
+  function addToCart(menuId, servings, quantity) {
+    $.ajax({
+      url: 'https://gestao.co.in/cart/add_to_cart',
+      type: 'POST',
+      data: {
+        menuId: menuId,
+        quantity: quantity,
+        servings: servings
+      },
+      success: function(response) {
+        if (response === "false") {
+          toastr.warning('Please login first');
+        } else {
+          if (Math.floor(response) == response && $.isNumeric(response)) {
+            $('.cart-items').text(response);
+            toastr.success('Added to the cart');
+          }
+        }
+      }
+    });
+  }
+
+
+  function initMap() {
+  // The location of Uluru
+  const uluru = { lat: 0, lng: 0 };
+  // The map, centered at Uluru
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 15,
+    center: uluru,
+    gestureHandling: "none",
+    zoomControl: false,
+    disableDefaultUI: true,
+  });
+  // The marker, positioned at Uluru
+  const marker = new google.maps.Marker({
+    position: uluru,
+    map: map,
+  });
+}
+
+// Get link to the maps and assign to address
+
+$("#address_click").click(function(){
+  window.open('https://maps.google.com/?q=0,0', 'Map');
+  return false;
+});
+
+$("#map").click(function(){
+  window.open('https://maps.google.com/?q=0,0', 'Map');
+  return false;
+});
+
+  // MAP INITIALIZING
+  // var map = L.map('map').setView([0, 0], 16);
+  // L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+
+  // L.marker([0, 0]).addTo(map)
+  //   .bindPopup('');
+  //   $( function() {
+  //   $("#accordion" ).accordion();
+  // } );
+
+
+
+</script>
+  <!-- Initialize common scripts for frontend and backend here -->
+ <!-- SHOW TOASTR NOTIFIVATION -->
+
+
+
+<script type="text/javascript">
+	"use strict";
+
+	function switch_language(language) {
+		$.ajax({
+			url: 'https://gestao.co.in/site/site_language',
+			type: 'post',
+			data: {
+				language: language
+			},
+			success: function(response) {
+				setTimeout(function() {
+					location.reload();
+				}, 500);
+			}
+		});
+	}
+</script>
+    <!-- MODAL -->
+    <script type="text/javascript">
+  "use strict";
+
+  function showLargeModal(url, header) {
+    // SHOWING AJAX PRELOADER IMAGE
+    jQuery('#large-modal .modal-body').html('...');
+    jQuery('#large-modal .modal-title').html('...');
+    // LOADING THE AJAX MODAL
+    jQuery('#large-modal').modal('show', {
+      backdrop: 'true'
+    });
+
+    // SHOW AJAX RESPONSE ON REQUEST SUCCESS
+    $.ajax({
+      url: url,
+      success: function(response) {
+        jQuery('#large-modal .modal-body').html(response);
+        jQuery('#large-modal .modal-title').html(header);
+      }
+    });
+  }
+
+  function showCartModal(url, header) {
+    // SHOWING AJAX PRELOADER IMAGE
+    jQuery('#cart-modal .modal-body').html('...');
+    // LOADING THE AJAX MODAL
+    jQuery('#cart-modal').modal('show', {
+      backdrop: 'true'
+    });
+
+    // SHOW AJAX RESPONSE ON REQUEST SUCCESS
+    $.ajax({
+      url: url,
+      success: function(response) {
+        jQuery('#cart-modal .modal-content').html(response);
+      }
+    });
+  }
+
+  function showModalWithHeader(url, header) {
+    // SHOWING AJAX PRELOADER IMAGE
+    jQuery('#modal-with-header .modal-body').html('...');
+    // LOADING THE AJAX MODAL
+    jQuery('#modal-with-header').modal('show', {
+      backdrop: 'true'
+    });
+
+    // SHOW AJAX RESPONSE ON REQUEST SUCCESS
+    $.ajax({
+      url: url,
+      success: function(response) {
+        jQuery('#modal-with-header .title').html(header);
+        jQuery('#modal-with-header .modal-body').html(response);
+      }
+    });
+  }
+
+  function confirm_modal(delete_url) {
+    jQuery('#alert-modal').modal('show', {
+      backdrop: 'static'
+    });
+    document.getElementById('update_link').setAttribute('href', delete_url);
+  }
+</script>
+
+<!-- (Large Modal)-->
+<div class="modal fade" id="large-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="myLargeModalLabel">...</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div>
+
+<!--CART MODAL WITH AVATAR-->
+<div class="modal fade" id="cart-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog cascading-modal modal-avatar modal-sm" role="document">
+    <!--Content-->
+    <div class="modal-content">
+
+    </div>
+  </div>
+</div>
+
+
+<!-- Info Alert Modal -->
+<div id="alert-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-body p-4">
+        <div class="text-center">
+          <i class="dripicons-information h1 text-info"></i>
+          <h4 class="mt-2">Heads up!</h4>
+          <p class="mt-3">Are you sure?</p>
+          <button type="button" class="btn btn-info my-2" data-dismiss="modal">Cancel</button>
+          <a href="#" id="update_link" class="btn btn-danger my-2">Continue</a>
+        </div>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!--STYLISH MODAL WITH HEADER-->
+<div class="modal fade modal-with-header" id="modal-with-header" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog cascading-modal" role="document">
+    <!--Content-->
+    <div class="modal-content">
+      <!--Header-->
+      <div class="modal-header light-blue darken-3 white-text">
+        <h4 class="title">...</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      </div>
+      <!--Body-->
+      <div class="modal-body mb-0">
+
+      </div>
+    </div>
+    <!--/.Content-->
+  </div>
+</div>
+<!--STYLISH MODAL WITH HEADER-->
+
+</body>
+
+<!-- Mirrored from gestao.co.in/site/restaurant/test-restaurant/7 by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 02 Jun 2021 06:57:28 GMT -->
+</html>
