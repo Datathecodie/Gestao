@@ -1,1106 +1,1143 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <!-- LOAD METAS -->
     <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- PAGE TITLE ARE SAFE. SINCE THEY ARE BEING GENERATED INSIDE THE SYSTEM -->
-<title>Gestão | Admin Dashboard</title>
-<link rel="shortcut icon" href="https://gestao.co.in/uploads/system/uXwK4C35LgYUBMNzVxec.jpg">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- PAGE TITLE ARE SAFE. SINCE THEY ARE BEING GENERATED INSIDE THE SYSTEM -->
+    <title>Gestão | Admin Dashboard</title>
+    <link rel="shortcut icon" href="https://gestao.co.in/uploads/system/uXwK4C35LgYUBMNzVxec.jpg">
     <!-- LOAD STYLES -->
     <!-- Google Font: Source Sans Pro -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
 
-<!-- Font Awesome Icons -->
-<link rel="stylesheet" href="https://gestao.co.in/assets/backend/plugins/fontawesome-free/css/all.min.css">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://gestao.co.in/assets/backend/plugins/fontawesome-free/css/all.min.css">
 
-<!-- overlayScrollbars -->
-<link rel="stylesheet" href="https://gestao.co.in/assets/backend/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+    <!-- overlayScrollbars -->
+    <link rel="stylesheet"
+        href="https://gestao.co.in/assets/backend/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
 
-<!-- Page wise style -->
-    
-<!-- Theme style -->
-<link rel="stylesheet" href="https://gestao.co.in/assets/backend/css/adminlte.min.css">
+    <!-- Page wise style -->
 
-<!-- Toastr -->
-<link rel="stylesheet" href="https://gestao.co.in/assets/global/toastr/toastr.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="https://gestao.co.in/assets/backend/css/adminlte.min.css">
 
-<!-- Custom CSS -->
-<link rel="stylesheet" href="https://gestao.co.in/assets/backend/css/custom.css"></head>
+    <!-- Toastr -->
+    <link rel="stylesheet" href="https://gestao.co.in/assets/global/toastr/toastr.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="https://gestao.co.in/assets/backend/css/custom.css">
+</head>
 
 <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
     <div class="wrapper">
         <!-- Navbar -->
         <nav class="main-header navbar navbar-expand navbar-white navbar-light">
-  <!-- Left navbar links -->
-  <ul class="navbar-nav">
-    <li class="nav-item">
-      <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
-    </li>
-    <li class="nav-item mt-1 d-sm-inline-block">
-      <a href="https://gestao.co.in/" class="btn btn-sm btn-primary" role="button"><i class="far fa-paper-plane"></i> View website</a>
-    </li>
-      </ul>
+            <!-- Left navbar links -->
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+                </li>
+                <li class="nav-item mt-1 d-sm-inline-block">
+                    <a href="https://gestao.co.in/" class="btn btn-sm btn-primary" role="button"><i
+                            class="far fa-paper-plane"></i> View website</a>
+                </li>
+            </ul>
 
-  <!-- Right navbar links -->
-  <ul class="navbar-nav ml-auto">
-                    <li class="nav-item dropdown mr-3">
-        <a class="nav-link" data-toggle="dropdown" href="#" aria-expanded="false">
-          <i class="far fa-bell"></i>
-          <span class="badge badge-warning navbar-badge">2</span>
-        </a>
-        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-          <span class="dropdown-item dropdown-header">Pending notification</span>
-          <div class="dropdown-divider"></div>
-          <a href="https://gestao.co.in/orders/today" class="dropdown-item">
-            <i class="fas fa-pizza-slice mr-2"></i> 0 Pending orders          </a>
-                      <div class="dropdown-divider"></div>
-            <a href="https://gestao.co.in/restaurant/pending" class="dropdown-item">
-              <i class="fas fa-utensils mr-2"></i> 2 Pending restaurants            </a>
-            <div class="dropdown-divider"></div>
-            <a href="https://gestao.co.in/driver?status=pending" class="dropdown-item">
-              <i class="fas fa-biking mr-2"></i> 0 Pending drivers            </a>
-                  </div>
-      </li>
-    
-    <li class="nav-item dropdown">
-      <a href="javascript:void(0)" class="btn btn-default" data-toggle="dropdown">
-        <i class="fas fa-lg fa-user-circle"></i>
-      </a>
-      <div class="dropdown-menu dropdown-menu dropdown-menu-right">
-        <span class="dropdown-item dropdown-header">Welcome, Admin</span>
-        <a href="https://gestao.co.in/settings/profile" class="dropdown-item">
-          Manage profile        </a>
-                  <a href="https://gestao.co.in/settings/system" class="dropdown-item">
-            System settings          </a>
-          <a href="https://gestao.co.in/settings/website" class="dropdown-item">
-            Website settings          </a>
-                <div class="dropdown-divider"></div>
-        <a href="https://gestao.co.in/logout" class="dropdown-item">
-          <i class="fas fa-sign-out-alt"></i> Logout        </a>
-      </div>
-    </li>
-  </ul>
-</nav>
+            <!-- Right navbar links -->
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown mr-3">
+                    <a class="nav-link" data-toggle="dropdown" href="#" aria-expanded="false">
+                        <i class="far fa-bell"></i>
+                        <span class="badge badge-warning navbar-badge">2</span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                        <span class="dropdown-item dropdown-header">Pending notification</span>
+                        <div class="dropdown-divider"></div>
+                        <a href="https://gestao.co.in/orders/today" class="dropdown-item">
+                            <i class="fas fa-pizza-slice mr-2"></i> 0 Pending orders </a>
+                        <div class="dropdown-divider"></div>
+                        <a href="https://gestao.co.in/restaurant/pending" class="dropdown-item">
+                            <i class="fas fa-utensils mr-2"></i> 2 Pending restaurants </a>
+                        <div class="dropdown-divider"></div>
+                        <a href="https://gestao.co.in/driver?status=pending" class="dropdown-item">
+                            <i class="fas fa-biking mr-2"></i> 0 Pending drivers </a>
+                    </div>
+                </li>
 
-<style>
+                <li class="nav-item dropdown">
+                    <a href="javascript:void(0)" class="btn btn-default" data-toggle="dropdown">
+                        <i class="fas fa-lg fa-user-circle"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu dropdown-menu-right">
+                        <span class="dropdown-item dropdown-header">Welcome, Admin</span>
+                        <a href="https://gestao.co.in/settings/profile" class="dropdown-item">
+                            Manage profile </a>
+                        <a href="https://gestao.co.in/settings/system" class="dropdown-item">
+                            System settings </a>
+                        <a href="https://gestao.co.in/settings/website" class="dropdown-item">
+                            Website settings </a>
+                        <div class="dropdown-divider"></div>
+                        <a href="https://gestao.co.in/logout" class="dropdown-item">
+                            <i class="fas fa-sign-out-alt"></i> Logout </a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
 
-.main-header .navbar-nav .nav-item {
-    margin: 5px;
-}
-
-</style>
+        <style>
+            .main-header .navbar-nav .nav-item {
+                margin: 5px;
+            }
+        </style>
         <!-- /.navbar -->
 
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-danger elevation-4">
-    <!-- Brand Logo -->
-    <a href="https://gestao.co.in/dashboard" class="brand-link">
-        <img src="https://gestao.co.in/uploads/system/QAxj2RcqYHgl3C1EWsLk.jpg" alt="" class="brand-image img-circle opacity-80">
-        <span class="brand-text font-weight-light">Gestão</span>
-    </a>
+            <!-- Brand Logo -->
+            <a href="https://gestao.co.in/dashboard" class="brand-link">
+                <img src="https://gestao.co.in/uploads/system/QAxj2RcqYHgl3C1EWsLk.jpg" alt=""
+                    class="brand-image img-circle opacity-80">
+                <span class="brand-text font-weight-light">Gestão</span>
+            </a>
 
-    <!-- Sidebar -->
-    <div class="sidebar">
-        <!-- Sidebar user panel (optional) -->
-        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-            <div class="image">
-                <img src="https://gestao.co.in/uploads/user/placeholder.png" class="img-circle" alt="User Image">
-            </div>
-            <div class="info">
-                <a href="https://gestao.co.in/settings/profile" class="d-block">admin</a>
-            </div>
-        </div>
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <!-- Sidebar user panel (optional) -->
+                <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                    <div class="image">
+                        <img src="https://gestao.co.in/uploads/user/placeholder.png" class="img-circle"
+                            alt="User Image">
+                    </div>
+                    <div class="info">
+                        <a href="https://gestao.co.in/settings/profile" class="d-block">admin</a>
+                    </div>
+                </div>
 
-        <!-- Sidebar Menu -->
-        <nav class="mt-2">
-            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                <!-- Sidebar Menu -->
+                <nav class="mt-2">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+                        data-accordion="false">
 
-                <li class="nav-header">Navigation Section</li>
-                <li class="nav-item">
-                    <a href="https://gestao.co.in/dashboard" class="nav-link active">
-                        <i class="nav-icon fas fa-tachometer-alt"></i>
-                        <p>
-                            Dashboard                        </p>
-                    </a>
-                </li>
-                                <li class="nav-item has-treeview ">
-                    <a href="#" class="nav-link ">
-                        <i class="nav-icon fas fa-hamburger"></i>
-                        <p>
-                            Orders                            <i class="fas fa-angle-left right"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
+                        <li class="nav-header">Navigation Section</li>
                         <li class="nav-item">
-                            <a href="https://gestao.co.in/orders/today" class="nav-link ">
-                                <i class="fas fa-calendar-day nav-icon"></i>
+                            <a href="https://gestao.co.in/dashboard" class="nav-link active">
+                                <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
-                                    Todays Orders                                    <span class="badge badge-warning right">
-                                        0                                    </span>
+                                    Dashboard </p>
+                            </a>
+                        </li>
+                        <li class="nav-item has-treeview ">
+                            <a href="#" class="nav-link ">
+                                <i class="nav-icon fas fa-hamburger"></i>
+                                <p>
+                                    Orders <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="https://gestao.co.in/orders/today" class="nav-link ">
+                                        <i class="fas fa-calendar-day nav-icon"></i>
+                                        <p>
+                                            Todays Orders <span class="badge badge-warning right">
+                                                0 </span>
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="https://gestao.co.in/orders" class="nav-link ">
+                                        <i class="fas fa-calendar-alt nav-icon"></i>
+                                        <p>All Orders</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="https://gestao.co.in/cuisine" class="nav-link ">
+                                <i class="fas fa-pepper-hot nav-icon"></i>
+                                <p>
+                                    Cuisine </p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="https://gestao.co.in/restaurant" class="nav-link ">
+                                <i class="fas fa-stroopwafel nav-icon"></i>
+                                <p>Restaurants<span class="badge badge-warning right">2</span></p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="https://gestao.co.in/qrmenu" class="nav-link ">
+                                <i class="fas fa-qrcode nav-icon"></i>
+                                <p>QR Menu builder</p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item has-treeview ">
+                            <a href="#" class="nav-link ">
+                                <i class="nav-icon fas fa-utensils"></i>
+                                <p>
+                                    Food menu <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="https://gestao.co.in/category" class="nav-link ">
+                                        <i class="fas fa-drumstick-bite nav-icon"></i>
+                                        <p>Menu Category</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="https://gestao.co.in/menu" class="nav-link ">
+                                        <i class="fas fa-bread-slice nav-icon"></i>
+                                        <p>Food Menu</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item has-treeview ">
+                            <a href="#" class="nav-link ">
+                                <i class="nav-icon fas fa-receipt"></i>
+                                <p>
+                                    Report <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="https://gestao.co.in/report/admin" class="nav-link ">
+                                        <i class="fas fa-user-shield nav-icon"></i>
+                                        <p>Admin Revenue</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="https://gestao.co.in/report" class="nav-link ">
+                                        <i class="fas fa-user-tie nav-icon"></i>
+                                        <p>
+                                            Owner Revenue </p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+
+                        <li class="nav-header">User Section</li>
+
+                        <li class="nav-item">
+                            <a href="https://gestao.co.in/owner" class="nav-link ">
+                                <i class="nav-icon fas fa-users-cog"></i>
+                                <p>
+                                    Owners </p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="https://gestao.co.in/customer" class="nav-link ">
+                                <i class="nav-icon fas fa-users"></i>
+                                <p>
+                                    Customers </p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="https://gestao.co.in/driver" class="nav-link ">
+                                <i class="nav-icon fas fa-biking"></i>
+                                <p>
+                                    Driver<span class="badge badge-warning right">0</span>
                                 </p>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a href="https://gestao.co.in/orders" class="nav-link ">
-                                <i class="fas fa-calendar-alt nav-icon"></i>
-                                <p>All Orders</p>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
 
-                <li class="nav-item">
-                    <a href="https://gestao.co.in/cuisine" class="nav-link ">
-                        <i class="fas fa-pepper-hot nav-icon"></i>
-                        <p>
-                            Cuisine                        </p>
-                    </a>
-                </li>
+                        <li class="nav-header">Settings Section</li>
 
-                <li class="nav-item">
-                    <a href="https://gestao.co.in/restaurant" class="nav-link ">
-                        <i class="fas fa-stroopwafel nav-icon"></i>
-                        <p>Restaurants<span class="badge badge-warning right">2</span></p>
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a href="https://gestao.co.in/qrmenu" class="nav-link ">
-                        <i class="fas fa-qrcode nav-icon"></i>
-                        <p>QR Menu builder</p>
-                    </a>
-                </li>
-
-                <li class="nav-item has-treeview ">
-                    <a href="#" class="nav-link ">
-                        <i class="nav-icon fas fa-utensils"></i>
-                        <p>
-                            Food menu                            <i class="fas fa-angle-left right"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="https://gestao.co.in/category" class="nav-link ">
-                                <i class="fas fa-drumstick-bite nav-icon"></i>
-                                <p>Menu Category</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="https://gestao.co.in/menu" class="nav-link ">
-                                <i class="fas fa-bread-slice nav-icon"></i>
-                                <p>Food Menu</p>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-
-                                <li class="nav-item has-treeview ">
-                    <a href="#" class="nav-link ">
-                        <i class="nav-icon fas fa-receipt"></i>
-                        <p>
-                            Report                            <i class="fas fa-angle-left right"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="https://gestao.co.in/report/admin" class="nav-link ">
-                                <i class="fas fa-user-shield nav-icon"></i>
-                                <p>Admin Revenue</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="https://gestao.co.in/report" class="nav-link ">
-                                <i class="fas fa-user-tie nav-icon"></i>
+                        <li class="nav-item has-treeview ">
+                            <a href="#" class="nav-link ">
+                                <i class="nav-icon fas fa-cog"></i>
                                 <p>
-                                    Owner Revenue                                </p>
+                                    Settings <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="https://gestao.co.in/settings/system" class="nav-link ">
+                                        <i class="fas fa-sliders-h nav-icon"></i>
+                                        <p>System Settings</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="https://gestao.co.in/settings/website" class="nav-link ">
+                                        <i class="fab fa-chrome nav-icon"></i>
+                                        <p>Website Settings</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="https://gestao.co.in/payment" class="nav-link ">
+                                        <i class="fas fa-coins nav-icon"></i>
+                                        <p>Payment Settings</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="https://gestao.co.in/settings/smtp" class="nav-link ">
+                                        <i class="far fa-paper-plane nav-icon"></i>
+                                        <p>Smtp Settings</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="https://gestao.co.in/language" class="nav-link ">
+                                        <i class="fas fa-language nav-icon"></i>
+                                        <p>Language Settings</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="https://gestao.co.in/settings/delivery" class="nav-link ">
+                                        <i class="fas fa-truck-loading nav-icon"></i>
+                                        <p>Delivery Settings</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="https://gestao.co.in/settings/revenue" class="nav-link ">
+                                        <i class="fas fa-divide nav-icon"></i>
+                                        <p>Revenue Settings</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="https://gestao.co.in/settings/vat" class="nav-link ">
+                                        <i class="fas fa-square-root-alt nav-icon"></i>
+                                        <p>VAT Settings</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="https://gestao.co.in/settings/recaptcha" class="nav-link ">
+                                        <i class="fas fa-robot nav-icon"></i>
+                                        <p>reCaptcha Settings</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="https://gestao.co.in/settings/profile" class="nav-link ">
+                                <i class="nav-icon fas fa-user-circle"></i>
+                                <p>
+                                    Manage profile </p>
                             </a>
                         </li>
                     </ul>
-                </li>
-
-
-                <li class="nav-header">User Section</li>
-
-                <li class="nav-item">
-                    <a href="https://gestao.co.in/owner" class="nav-link ">
-                        <i class="nav-icon fas fa-users-cog"></i>
-                        <p>
-                            Owners                        </p>
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a href="https://gestao.co.in/customer" class="nav-link ">
-                        <i class="nav-icon fas fa-users"></i>
-                        <p>
-                            Customers                        </p>
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a href="https://gestao.co.in/driver" class="nav-link ">
-                        <i class="nav-icon fas fa-biking"></i>
-                        <p>
-                            Driver<span class="badge badge-warning right">0</span>
-                        </p>
-                    </a>
-                </li>
-
-                <li class="nav-header">Settings Section</li>
-
-                <li class="nav-item has-treeview ">
-                    <a href="#" class="nav-link ">
-                        <i class="nav-icon fas fa-cog"></i>
-                        <p>
-                            Settings                            <i class="fas fa-angle-left right"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="https://gestao.co.in/settings/system" class="nav-link ">
-                                <i class="fas fa-sliders-h nav-icon"></i>
-                                <p>System Settings</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="https://gestao.co.in/settings/website" class="nav-link ">
-                                <i class="fab fa-chrome nav-icon"></i>
-                                <p>Website Settings</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="https://gestao.co.in/payment" class="nav-link ">
-                                <i class="fas fa-coins nav-icon"></i>
-                                <p>Payment Settings</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="https://gestao.co.in/settings/smtp" class="nav-link ">
-                                <i class="far fa-paper-plane nav-icon"></i>
-                                <p>Smtp Settings</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="https://gestao.co.in/language" class="nav-link ">
-                                <i class="fas fa-language nav-icon"></i>
-                                <p>Language Settings</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="https://gestao.co.in/settings/delivery" class="nav-link ">
-                                <i class="fas fa-truck-loading nav-icon"></i>
-                                <p>Delivery Settings</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="https://gestao.co.in/settings/revenue" class="nav-link ">
-                                <i class="fas fa-divide nav-icon"></i>
-                                <p>Revenue Settings</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="https://gestao.co.in/settings/vat" class="nav-link ">
-                                <i class="fas fa-square-root-alt nav-icon"></i>
-                                <p>VAT Settings</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="https://gestao.co.in/settings/recaptcha" class="nav-link ">
-                                <i class="fas fa-robot nav-icon"></i>
-                                <p>reCaptcha Settings</p>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-
-                <li class="nav-item">
-                    <a href="https://gestao.co.in/settings/profile" class="nav-link ">
-                        <i class="nav-icon fas fa-user-circle"></i>
-                        <p>
-                            Manage profile                        </p>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-        <!-- /.sidebar-menu -->
-    </div>
-    <!-- /.sidebar -->
-</aside>
+                </nav>
+                <!-- /.sidebar-menu -->
+            </div>
+            <!-- /.sidebar -->
+        </aside>
 
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
             <!-- Content Header -->
-<div class="content-header">
-    <div class="container-fluid">
-        <div class="card">
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-6">
-                        <h4 class="mt-1 text-dark">Admin Dashboard</h4>
+            <div class="content-header">
+                <div class="container-fluid">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h4 class="mt-1 text-dark">Admin Dashboard</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- /.container-fluid -->
+            </div><!-- /.content-header -->
+
+            <section class="content">
+                <div class="container-fluid">
+                    <!-- Info boxes -->
+                    <div class="row">
+                        <!-- TILE 1 STARTS -->
+                        <div class="col-md-3 col-sm-6 col-12">
+                            <div class="info-box">
+                                <span class="info-box-icon bg-lightblue"><i class="fas fa-hamburger"></i></span>
+                                <div class="info-box-content">
+                                    <span class="info-box-text"><small class="text-muted">Total <small>(By
+                                                now)</small></small></span>
+                                    <span class="progress-description">
+                                        Order Placed </span>
+                                    <span class="info-box-number">
+                                        6 </span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- TILE 1 ENDS -->
+
+                        <!-- TILE 2 STARTS -->
+                        <div class="col-md-3 col-sm-6 col-12">
+                            <div class="info-box">
+                                <span class="info-box-icon bg-danger"><i class="fas fa-stroopwafel"></i></span>
+                                <div class="info-box-content">
+                                    <span class="info-box-text"><small class="text-muted">Total <small>(By
+                                                now)</small></small></span>
+                                    <span class="progress-description">
+                                        Order Processed </span>
+                                    <span class="info-box-number">
+                                        3 </span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- TILE 2 ENDS -->
+
+                        <!-- fix for small devices only -->
+                        <div class="clearfix hidden-md-up"></div>
+
+                        <!-- TILE 3 STARTS -->
+                        <div class="col-md-3 col-sm-6 col-12">
+                            <div class="info-box">
+                                <span class="info-box-icon bg-info"><i class="fas fa-truck-loading"></i></span>
+                                <div class="info-box-content">
+                                    <span class="info-box-text"><small class="text-muted">Total <small>(By
+                                                now)</small></small></span>
+                                    <span class="progress-description">
+                                        Order Delivered </span>
+                                    <span class="info-box-number">
+                                        3 </span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- TILE 3 ENDS -->
+
+                        <!-- TILE 4 STARTS -->
+                        <div class="col-md-3 col-sm-6 col-12">
+                            <div class="info-box">
+                                <span class="info-box-icon bg-gradient-warning"><i
+                                        class="fas fa-exclamation-triangle"></i></span>
+                                <div class="info-box-content">
+                                    <span class="info-box-text"><small class="text-muted">Total <small>(By
+                                                now)</small></small></span>
+                                    <span class="progress-description">
+                                        Order Canceled </span>
+                                    <span class="info-box-number">
+                                        3 </span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- TILE 4 ENDS -->
+                    </div>
+
+                    <div class="row">
+                        <!-- TILE 5 STARTS -->
+                        <div class="col-md-3 col-sm-6 col-12">
+                            <div class="info-box">
+                                <span class="info-box-icon bg-gradient-olive"><i class="fas fa-utensils"></i></span>
+                                <div class="info-box-content">
+                                    <span class="info-box-text"><small class="text-muted">Approved</small></span>
+                                    <span class="progress-description">
+                                        Restaurant </span>
+                                    <span class="info-box-number">
+                                        6 </span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- TILE 5 ENDS -->
+
+                        <!-- TILE 6 STARTS -->
+                        <div class="col-md-3 col-sm-6 col-12">
+                            <div class="info-box">
+                                <span class="info-box-icon bg-gray-dark"><i class="fas fa-concierge-bell"></i></span>
+                                <div class="info-box-content">
+                                    <span class="info-box-text"><small class="text-muted">Pending</small></span>
+                                    <span class="progress-description">
+                                        Restaurant </span>
+                                    <span class="info-box-number">
+                                        2 </span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- TILE 6 ENDS -->
+
+                        <!-- TILE 7 STARTS -->
+                        <div class="col-md-3 col-sm-6 col-12">
+                            <div class="info-box">
+                                <span class="info-box-icon bg-gradient-maroon"><i class="fas fa-users"></i></span>
+                                <div class="info-box-content">
+                                    <span class="info-box-text"><small class="text-muted">Registered</small></span>
+                                    <span class="progress-description">
+                                        Active Customers </span>
+                                    <span class="info-box-number">
+                                        29
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- TILE 7 ENDS -->
+
+                        <!-- TILE 8 STARTS -->
+                        <div class="col-md-3 col-sm-6 col-12">
+                            <div class="info-box">
+                                <span class="info-box-icon bg-gradient-gray"><i class="fas fa-biking"></i></span>
+                                <div class="info-box-content">
+                                    <span class="info-box-text"><small class="text-muted">Registered</small></span>
+                                    <span class="progress-description">
+                                        Delivery Man </span>
+                                    <span class="info-box-number">
+                                        1 </span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- TILE 8 ENDS -->
+                    </div>
+                    <!-- /.row -->
+                    <!-- MONTHLY SALES GRAPH -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title"><i class="far fa-chart-bar"></i> Admin Income Graph Of Year: 2021
+                            </h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div id="sales-graph" class="graph-style"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-7">
+                            <!-- DAILY ORDER GRAPH -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title"><i class="far fa-chart-bar"></i> Placed Order In Each Day For
+                                        Month: <strong>June</strong></h3>
+                                </div>
+                                <div class="card-body">
+                                    <div id="order-graph" class="graph-style"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-5">
+                            <!-- DAILY ORDER GRAPH -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title"><i class="far fa-chart-bar"></i> Restaurants</h3>
+                                </div>
+                                <div class="card-body">
+                                    <div id="restaurant-status" class="graph-style"></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div><!-- /.container-fluid -->
-</div><!-- /.content-header -->
-
-<section class="content">
-    <div class="container-fluid">
-        <!-- Info boxes -->
-<div class="row">
-    <!-- TILE 1 STARTS -->
-    <div class="col-md-3 col-sm-6 col-12">
-        <div class="info-box">
-            <span class="info-box-icon bg-lightblue"><i class="fas fa-hamburger"></i></span>
-            <div class="info-box-content">
-                <span class="info-box-text"><small class="text-muted">Total <small>(By now)</small></small></span>
-                <span class="progress-description">
-                    Order Placed                </span>
-                <span class="info-box-number">
-                    6                </span>
-            </div>
-        </div>
-    </div>
-    <!-- TILE 1 ENDS -->
-
-    <!-- TILE 2 STARTS -->
-    <div class="col-md-3 col-sm-6 col-12">
-        <div class="info-box">
-            <span class="info-box-icon bg-danger"><i class="fas fa-stroopwafel"></i></span>
-            <div class="info-box-content">
-                <span class="info-box-text"><small class="text-muted">Total <small>(By now)</small></small></span>
-                <span class="progress-description">
-                    Order Processed                </span>
-                <span class="info-box-number">
-                    3                </span>
-            </div>
-        </div>
-    </div>
-    <!-- TILE 2 ENDS -->
-
-    <!-- fix for small devices only -->
-    <div class="clearfix hidden-md-up"></div>
-
-    <!-- TILE 3 STARTS -->
-    <div class="col-md-3 col-sm-6 col-12">
-        <div class="info-box">
-            <span class="info-box-icon bg-info"><i class="fas fa-truck-loading"></i></span>
-            <div class="info-box-content">
-                <span class="info-box-text"><small class="text-muted">Total <small>(By now)</small></small></span>
-                <span class="progress-description">
-                    Order Delivered                </span>
-                <span class="info-box-number">
-                    3                </span>
-            </div>
-        </div>
-    </div>
-    <!-- TILE 3 ENDS -->
-
-    <!-- TILE 4 STARTS -->
-    <div class="col-md-3 col-sm-6 col-12">
-        <div class="info-box">
-            <span class="info-box-icon bg-gradient-warning"><i class="fas fa-exclamation-triangle"></i></span>
-            <div class="info-box-content">
-                <span class="info-box-text"><small class="text-muted">Total <small>(By now)</small></small></span>
-                <span class="progress-description">
-                    Order Canceled                </span>
-                <span class="info-box-number">
-                    3                </span>
-            </div>
-        </div>
-    </div>
-    <!-- TILE 4 ENDS -->
-</div>
-
-<div class="row">
-    <!-- TILE 5 STARTS -->
-    <div class="col-md-3 col-sm-6 col-12">
-        <div class="info-box">
-            <span class="info-box-icon bg-gradient-olive"><i class="fas fa-utensils"></i></span>
-            <div class="info-box-content">
-                <span class="info-box-text"><small class="text-muted">Approved</small></span>
-                <span class="progress-description">
-                    Restaurant                </span>
-                <span class="info-box-number">
-                    6                </span>
-            </div>
-        </div>
-    </div>
-    <!-- TILE 5 ENDS -->
-
-    <!-- TILE 6 STARTS -->
-    <div class="col-md-3 col-sm-6 col-12">
-        <div class="info-box">
-            <span class="info-box-icon bg-gray-dark"><i class="fas fa-concierge-bell"></i></span>
-            <div class="info-box-content">
-                <span class="info-box-text"><small class="text-muted">Pending</small></span>
-                <span class="progress-description">
-                    Restaurant                </span>
-                <span class="info-box-number">
-                    2                </span>
-            </div>
-        </div>
-    </div>
-    <!-- TILE 6 ENDS -->
-
-    <!-- TILE 7 STARTS -->
-    <div class="col-md-3 col-sm-6 col-12">
-        <div class="info-box">
-            <span class="info-box-icon bg-gradient-maroon"><i class="fas fa-users"></i></span>
-            <div class="info-box-content">
-                <span class="info-box-text"><small class="text-muted">Registered</small></span>
-                <span class="progress-description">
-                    Active Customers                </span>
-                <span class="info-box-number">
-                    29
-                </span>
-            </div>
-        </div>
-    </div>
-    <!-- TILE 7 ENDS -->
-
-    <!-- TILE 8 STARTS -->
-    <div class="col-md-3 col-sm-6 col-12">
-        <div class="info-box">
-            <span class="info-box-icon bg-gradient-gray"><i class="fas fa-biking"></i></span>
-            <div class="info-box-content">
-                <span class="info-box-text"><small class="text-muted">Registered</small></span>
-                <span class="progress-description">
-                    Delivery Man                </span>
-                <span class="info-box-number">
-                    1                </span>
-            </div>
-        </div>
-    </div>
-    <!-- TILE 8 ENDS -->
-</div>
-<!-- /.row -->
-        <!-- MONTHLY SALES GRAPH -->
-        <div class="card">
-            <div class="card-header">
-                <h3 class="card-title"><i class="far fa-chart-bar"></i> Admin Income Graph Of Year: 2021</h3>
-            </div>
-            <div class="card-body">
-                <div class="row">
-                    <div id="sales-graph" class="graph-style"></div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-lg-7">
-                <!-- DAILY ORDER GRAPH -->
-                <div class="card">
-                    <div class="card-header">
-                        <h3 class="card-title"><i class="far fa-chart-bar"></i> Placed Order In Each Day For Month: <strong>June</strong></h3>
-                    </div>
-                    <div class="card-body">
-                        <div id="order-graph" class="graph-style"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-5">
-                <!-- DAILY ORDER GRAPH -->
-                <div class="card">
-                    <div class="card-header">
-                        <h3 class="card-title"><i class="far fa-chart-bar"></i> Restaurants</h3>
-                    </div>
-                    <div class="card-body">
-                        <div id="restaurant-status" class="graph-style"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--/. container-fluid -->
-</section>
-<!-- /.content -->
+                <!--/. container-fluid -->
+            </section>
+            <!-- /.content -->
         </div>
         <!-- /.content-wrapper -->
 
         <!-- Main Footer -->
         <footer class="main-footer">
-    <strong>&copy <a href="https://digitcure.com/">Digit Cure ®</a></strong>
-    <div class="float-right d-none d-sm-inline-block">
-        <b>Version</b> 1.1    </div>
-</footer>
+            <strong>&copy <a href="https://digitcure.com/">Digit Cure ®</a></strong>
+            <div class="float-right d-none d-sm-inline-block">
+                <b>Version</b> 1.1
+            </div>
+        </footer>
     </div>
     <!-- ./wrapper -->
 
     <!-- LOAD SCRIPTS -->
     <!-- jQuery -->
-<script src="https://gestao.co.in/assets/backend/plugins/jquery/jquery.min.js"></script>
+    <script src="https://gestao.co.in/assets/backend/plugins/jquery/jquery.min.js"></script>
 
-<!-- Bootstrap -->
-<script src="https://gestao.co.in/assets/backend/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="https://gestao.co.in/assets/backend/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-<!-- overlayScrollbars -->
-<script src="https://gestao.co.in/assets/backend/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+    <!-- overlayScrollbars -->
+    <script
+        src="https://gestao.co.in/assets/backend/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
 
-<!-- AdminLTE App -->
-<script src="https://gestao.co.in/assets/backend/js/adminlte.js"></script>
+    <!-- AdminLTE App -->
+    <script src="https://gestao.co.in/assets/backend/js/adminlte.js"></script>
 
-<!-- Page wise script -->
-	
-<!-- Resources -->
-<script src="https://gestao.co.in/assets/backend/plugins/amcharts/core.js"></script>
-<script src="https://gestao.co.in/assets/backend/plugins/amcharts/charts.js"></script>
-<script src="https://gestao.co.in/assets/backend/plugins/amcharts/animated.js"></script>
+    <!-- Page wise script -->
 
-<script>
-"use strict";
+    <!-- Resources -->
+    <script src="https://gestao.co.in/assets/backend/plugins/amcharts/core.js"></script>
+    <script src="https://gestao.co.in/assets/backend/plugins/amcharts/charts.js"></script>
+    <script src="https://gestao.co.in/assets/backend/plugins/amcharts/animated.js"></script>
 
-// SALES GRAPH
-am4core.ready(function() {
-    // Themes begin
-    am4core.useTheme(am4themes_animated);
-    // Themes end
+    <script>
+        "use strict";
 
-    var chart = am4core.create("sales-graph", am4charts.XYChart);
+        // SALES GRAPH
+        am4core.ready(function () {
+            // Themes begin
+            am4core.useTheme(am4themes_animated);
+            // Themes end
 
-    var data = [];
+            var chart = am4core.create("sales-graph", am4charts.XYChart);
 
-    chart.data = [{
-        "month": "Jan",
-        "income": '0'
-    }, {
-        "month": "Feb",
-        "income": '0'
-    }, {
-        "month": "Mar",
-        "income": '0'
-    }, {
-        "month": "Apr",
-        "income": '0'
-    }, {
-        "month": "May",
-        "income": '0'
-    }, {
-        "month": "Jun",
-        "income": '0'
-    }, {
-        "month": "Jul",
-        "income": '0'
-    }, {
-        "month": "Aug",
-        "income": '0'
-    }, {
-        "month": "Sep",
-        "income": '0'
-    }, {
-        "month": "Oct",
-        "income": '0'
-    }, {
-        "month": "Nov",
-        "income": '0'
-    }, {
-        "month": "Dec",
-        "income": '0'
-    }];
+            var data = [];
 
-    var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
-    categoryAxis.renderer.grid.template.location = 0;
-    categoryAxis.renderer.ticks.template.disabled = true;
-    categoryAxis.renderer.line.opacity = 0;
-    categoryAxis.renderer.grid.template.disabled = true;
-    categoryAxis.renderer.minGridDistance = 40;
-    categoryAxis.dataFields.category = "month";
-    categoryAxis.startLocation = 0.4;
-    categoryAxis.endLocation = 0.6;
+            chart.data = [{
+                "month": "Jan",
+                "income": '0'
+            }, {
+                "month": "Feb",
+                "income": '0'
+            }, {
+                "month": "Mar",
+                "income": '0'
+            }, {
+                "month": "Apr",
+                "income": '0'
+            }, {
+                "month": "May",
+                "income": '0'
+            }, {
+                "month": "Jun",
+                "income": '0'
+            }, {
+                "month": "Jul",
+                "income": '0'
+            }, {
+                "month": "Aug",
+                "income": '0'
+            }, {
+                "month": "Sep",
+                "income": '0'
+            }, {
+                "month": "Oct",
+                "income": '0'
+            }, {
+                "month": "Nov",
+                "income": '0'
+            }, {
+                "month": "Dec",
+                "income": '0'
+            }];
+
+            var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+            categoryAxis.renderer.grid.template.location = 0;
+            categoryAxis.renderer.ticks.template.disabled = true;
+            categoryAxis.renderer.line.opacity = 0;
+            categoryAxis.renderer.grid.template.disabled = true;
+            categoryAxis.renderer.minGridDistance = 40;
+            categoryAxis.dataFields.category = "month";
+            categoryAxis.startLocation = 0.4;
+            categoryAxis.endLocation = 0.6;
 
 
-    var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
-    valueAxis.tooltip.disabled = true;
-    valueAxis.renderer.line.opacity = 0;
-    valueAxis.renderer.ticks.template.disabled = true;
-    valueAxis.min = 0;
+            var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+            valueAxis.tooltip.disabled = true;
+            valueAxis.renderer.line.opacity = 0;
+            valueAxis.renderer.ticks.template.disabled = true;
+            valueAxis.min = 0;
 
-    var lineSeries = chart.series.push(new am4charts.LineSeries());
-    lineSeries.dataFields.categoryX = "month";
-    lineSeries.dataFields.valueY = "income";
-    lineSeries.tooltipText = "Income: {valueY.value}";
-    lineSeries.fillOpacity = 0.5;
-    lineSeries.strokeWidth = 3;
-    lineSeries.propertyFields.stroke = "lineColor";
-    lineSeries.propertyFields.fill = "lineColor";
+            var lineSeries = chart.series.push(new am4charts.LineSeries());
+            lineSeries.dataFields.categoryX = "month";
+            lineSeries.dataFields.valueY = "income";
+            lineSeries.tooltipText = "Income: {valueY.value}";
+            lineSeries.fillOpacity = 0.5;
+            lineSeries.strokeWidth = 3;
+            lineSeries.propertyFields.stroke = "lineColor";
+            lineSeries.propertyFields.fill = "lineColor";
 
-    var bullet = lineSeries.bullets.push(new am4charts.CircleBullet());
-    bullet.circle.radius = 6;
-    bullet.circle.fill = am4core.color("#fff");
-    bullet.circle.strokeWidth = 3;
+            var bullet = lineSeries.bullets.push(new am4charts.CircleBullet());
+            bullet.circle.radius = 6;
+            bullet.circle.fill = am4core.color("#fff");
+            bullet.circle.strokeWidth = 3;
 
-    chart.cursor = new am4charts.XYCursor();
-    chart.cursor.behavior = "panX";
-    chart.cursor.lineX.opacity = 0;
-    chart.cursor.lineY.opacity = 0;
-});
+            chart.cursor = new am4charts.XYCursor();
+            chart.cursor.behavior = "panX";
+            chart.cursor.lineX.opacity = 0;
+            chart.cursor.lineY.opacity = 0;
+        });
 
-// ORDER GRAPH
-am4core.ready(function() {
+        // ORDER GRAPH
+        am4core.ready(function () {
 
-    // Themes begin
-    am4core.useTheme(am4themes_animated);
-    // Themes end
+            // Themes begin
+            am4core.useTheme(am4themes_animated);
+            // Themes end
 
-    var chart = am4core.create("order-graph", am4charts.XYChart);
+            var chart = am4core.create("order-graph", am4charts.XYChart);
 
-    var data = [];
-    var value = 0;
+            var data = [];
+            var value = 0;
 
-    ''
-    value = 0;
-    data.push({
-        category: '1',
-        value: '0'
-    });
-    ''
-    value = 0;
-    data.push({
-        category: '2',
-        value: '0'
-    });
-    ''
-    value = 0;
-    data.push({
-        category: '3',
-        value: '0'
-    });
-    ''
-    value = 0;
-    data.push({
-        category: '4',
-        value: '0'
-    });
-    ''
-    value = 0;
-    data.push({
-        category: '5',
-        value: '0'
-    });
-    ''
-    value = 0;
-    data.push({
-        category: '6',
-        value: '0'
-    });
-    ''
-    value = 0;
-    data.push({
-        category: '7',
-        value: '0'
-    });
-    ''
-    value = 0;
-    data.push({
-        category: '8',
-        value: '0'
-    });
-    ''
-    value = 0;
-    data.push({
-        category: '9',
-        value: '0'
-    });
-    ''
-    value = 0;
-    data.push({
-        category: '10',
-        value: '0'
-    });
-    ''
-    value = 0;
-    data.push({
-        category: '11',
-        value: '0'
-    });
-    ''
-    value = 0;
-    data.push({
-        category: '12',
-        value: '0'
-    });
-    ''
-    value = 0;
-    data.push({
-        category: '13',
-        value: '0'
-    });
-    ''
-    value = 0;
-    data.push({
-        category: '14',
-        value: '0'
-    });
-    ''
-    value = 0;
-    data.push({
-        category: '15',
-        value: '0'
-    });
-    ''
-    value = 0;
-    data.push({
-        category: '16',
-        value: '0'
-    });
-    ''
-    value = 0;
-    data.push({
-        category: '17',
-        value: '0'
-    });
-    ''
-    value = 0;
-    data.push({
-        category: '18',
-        value: '0'
-    });
-    ''
-    value = 0;
-    data.push({
-        category: '19',
-        value: '0'
-    });
-    ''
-    value = 0;
-    data.push({
-        category: '20',
-        value: '0'
-    });
-    ''
-    value = 0;
-    data.push({
-        category: '21',
-        value: '0'
-    });
-    ''
-    value = 0;
-    data.push({
-        category: '22',
-        value: '0'
-    });
-    ''
-    value = 0;
-    data.push({
-        category: '23',
-        value: '0'
-    });
-    ''
-    value = 0;
-    data.push({
-        category: '24',
-        value: '0'
-    });
-    ''
-    value = 0;
-    data.push({
-        category: '25',
-        value: '0'
-    });
-    ''
-    value = 0;
-    data.push({
-        category: '26',
-        value: '0'
-    });
-    ''
-    value = 0;
-    data.push({
-        category: '27',
-        value: '0'
-    });
-    ''
-    value = 0;
-    data.push({
-        category: '28',
-        value: '0'
-    });
-    ''
-    value = 0;
-    data.push({
-        category: '29',
-        value: '0'
-    });
-    ''
-    value = 0;
-    data.push({
-        category: '30',
-        value: '0'
-    });
-    ''
+            ''
+            value = 0;
+            data.push({
+                category: '1',
+                value: '0'
+            });
+            ''
+            value = 0;
+            data.push({
+                category: '2',
+                value: '0'
+            });
+            ''
+            value = 0;
+            data.push({
+                category: '3',
+                value: '0'
+            });
+            ''
+            value = 0;
+            data.push({
+                category: '4',
+                value: '0'
+            });
+            ''
+            value = 0;
+            data.push({
+                category: '5',
+                value: '0'
+            });
+            ''
+            value = 0;
+            data.push({
+                category: '6',
+                value: '0'
+            });
+            ''
+            value = 0;
+            data.push({
+                category: '7',
+                value: '0'
+            });
+            ''
+            value = 0;
+            data.push({
+                category: '8',
+                value: '0'
+            });
+            ''
+            value = 0;
+            data.push({
+                category: '9',
+                value: '0'
+            });
+            ''
+            value = 0;
+            data.push({
+                category: '10',
+                value: '0'
+            });
+            ''
+            value = 0;
+            data.push({
+                category: '11',
+                value: '0'
+            });
+            ''
+            value = 0;
+            data.push({
+                category: '12',
+                value: '0'
+            });
+            ''
+            value = 0;
+            data.push({
+                category: '13',
+                value: '0'
+            });
+            ''
+            value = 0;
+            data.push({
+                category: '14',
+                value: '0'
+            });
+            ''
+            value = 0;
+            data.push({
+                category: '15',
+                value: '0'
+            });
+            ''
+            value = 0;
+            data.push({
+                category: '16',
+                value: '0'
+            });
+            ''
+            value = 0;
+            data.push({
+                category: '17',
+                value: '0'
+            });
+            ''
+            value = 0;
+            data.push({
+                category: '18',
+                value: '0'
+            });
+            ''
+            value = 0;
+            data.push({
+                category: '19',
+                value: '0'
+            });
+            ''
+            value = 0;
+            data.push({
+                category: '20',
+                value: '0'
+            });
+            ''
+            value = 0;
+            data.push({
+                category: '21',
+                value: '0'
+            });
+            ''
+            value = 0;
+            data.push({
+                category: '22',
+                value: '0'
+            });
+            ''
+            value = 0;
+            data.push({
+                category: '23',
+                value: '0'
+            });
+            ''
+            value = 0;
+            data.push({
+                category: '24',
+                value: '0'
+            });
+            ''
+            value = 0;
+            data.push({
+                category: '25',
+                value: '0'
+            });
+            ''
+            value = 0;
+            data.push({
+                category: '26',
+                value: '0'
+            });
+            ''
+            value = 0;
+            data.push({
+                category: '27',
+                value: '0'
+            });
+            ''
+            value = 0;
+            data.push({
+                category: '28',
+                value: '0'
+            });
+            ''
+            value = 0;
+            data.push({
+                category: '29',
+                value: '0'
+            });
+            ''
+            value = 0;
+            data.push({
+                category: '30',
+                value: '0'
+            });
+            ''
 
-    chart.data = data;
-    var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
-    categoryAxis.renderer.grid.template.location = 0;
-    categoryAxis.dataFields.category = "category";
-    categoryAxis.renderer.minGridDistance = 15;
-    categoryAxis.renderer.grid.template.location = 0.5;
-    categoryAxis.renderer.grid.template.strokeDasharray = "1,3";
-    categoryAxis.renderer.labels.template.rotation = -90;
-    categoryAxis.renderer.labels.template.horizontalCenter = "left";
-    categoryAxis.renderer.labels.template.location = 0.5;
+            chart.data = data;
+            var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+            categoryAxis.renderer.grid.template.location = 0;
+            categoryAxis.dataFields.category = "category";
+            categoryAxis.renderer.minGridDistance = 15;
+            categoryAxis.renderer.grid.template.location = 0.5;
+            categoryAxis.renderer.grid.template.strokeDasharray = "1,3";
+            categoryAxis.renderer.labels.template.rotation = -90;
+            categoryAxis.renderer.labels.template.horizontalCenter = "left";
+            categoryAxis.renderer.labels.template.location = 0.5;
 
-    categoryAxis.renderer.labels.template.adapter.add("dx", function(dx, target) {
-        return -target.maxRight / 2;
-    })
+            categoryAxis.renderer.labels.template.adapter.add("dx", function (dx, target) {
+                return -target.maxRight / 2;
+            })
 
-    var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
-    valueAxis.tooltip.disabled = true;
-    valueAxis.renderer.ticks.template.disabled = true;
-    valueAxis.renderer.axisFills.template.disabled = true;
-    valueAxis.maxPrecision = 0;
+            var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+            valueAxis.tooltip.disabled = true;
+            valueAxis.renderer.ticks.template.disabled = true;
+            valueAxis.renderer.axisFills.template.disabled = true;
+            valueAxis.maxPrecision = 0;
 
-    var series = chart.series.push(new am4charts.ColumnSeries());
-    series.dataFields.categoryX = "category";
-    series.dataFields.valueY = "value";
-    series.tooltipText = "{valueY.value}";
-    series.sequencedInterpolation = true;
-    series.fillOpacity = 0;
-    series.strokeOpacity = 1;
-    series.strokeDashArray = "1,3";
-    series.columns.template.width = 0.01;
-    series.tooltip.pointerOrientation = "horizontal";
+            var series = chart.series.push(new am4charts.ColumnSeries());
+            series.dataFields.categoryX = "category";
+            series.dataFields.valueY = "value";
+            series.tooltipText = "{valueY.value}";
+            series.sequencedInterpolation = true;
+            series.fillOpacity = 0;
+            series.strokeOpacity = 1;
+            series.strokeDashArray = "1,3";
+            series.columns.template.width = 0.01;
+            series.tooltip.pointerOrientation = "horizontal";
 
-    var bullet = series.bullets.create(am4charts.CircleBullet);
+            var bullet = series.bullets.create(am4charts.CircleBullet);
 
-    chart.cursor = new am4charts.XYCursor();
-});
+            chart.cursor = new am4charts.XYCursor();
+        });
 
-// RESTAURANTS PIE CHART
-am4core.ready(function() {
+        // RESTAURANTS PIE CHART
+        am4core.ready(function () {
 
-    // Themes begin
-    am4core.useTheme(am4themes_animated);
-    // Themes end
+            // Themes begin
+            am4core.useTheme(am4themes_animated);
+            // Themes end
 
-    // Create chart instance
-    var chart = am4core.create("restaurant-status", am4charts.PieChart);
+            // Create chart instance
+            var chart = am4core.create("restaurant-status", am4charts.PieChart);
 
-    // Set data
-    var selected;
-    var types = [{
-        type: 'Approved restaurant',
-        percent: '6',
-        color: am4core.color("#4CAF50")
-    }, {
-        type: 'Requested restaurant',
-        percent: '2',
-        color: am4core.color("#FFCA28")
-    }];
+            // Set data
+            var selected;
+            var types = [{
+                type: 'Approved restaurant',
+                percent: '6',
+                color: am4core.color("#4CAF50")
+            }, {
+                type: 'Requested restaurant',
+                percent: '2',
+                color: am4core.color("#FFCA28")
+            }];
 
-    // Add data
-    chart.data = generateChartData();
+            // Add data
+            chart.data = generateChartData();
 
-    // Add and configure Series
-    var pieSeries = chart.series.push(new am4charts.PieSeries());
-    pieSeries.dataFields.value = "percent";
-    pieSeries.dataFields.category = "type";
-    pieSeries.slices.template.propertyFields.fill = "color";
-    pieSeries.slices.template.propertyFields.isActive = "pulled";
-    pieSeries.slices.template.strokeWidth = 0;
+            // Add and configure Series
+            var pieSeries = chart.series.push(new am4charts.PieSeries());
+            pieSeries.dataFields.value = "percent";
+            pieSeries.dataFields.category = "type";
+            pieSeries.slices.template.propertyFields.fill = "color";
+            pieSeries.slices.template.propertyFields.isActive = "pulled";
+            pieSeries.slices.template.strokeWidth = 0;
 
-    // CUSTOM CODES
-    pieSeries.ticks.template.disabled = true;
-    pieSeries.alignLabels = false;
-    pieSeries.labels.template.text = "{value.percent.formatNumber('#.0')}%";
-    pieSeries.labels.template.radius = am4core.percent(-40);
-    pieSeries.labels.template.fill = am4core.color("white");
+            // CUSTOM CODES
+            pieSeries.ticks.template.disabled = true;
+            pieSeries.alignLabels = false;
+            pieSeries.labels.template.text = "{value.percent.formatNumber('#.0')}%";
+            pieSeries.labels.template.radius = am4core.percent(-40);
+            pieSeries.labels.template.fill = am4core.color("white");
 
-    function generateChartData() {
-        var chartData = [];
-        for (var i = 0; i < types.length; i++) {
-            if (i == selected) {
-                for (var x = 0; x < types[i].subs.length; x++) {
-                    chartData.push({
-                        type: types[i].subs[x].type,
-                        percent: types[i].subs[x].percent,
-                        color: types[i].color,
-                        pulled: true
-                    });
+            function generateChartData() {
+                var chartData = [];
+                for (var i = 0; i < types.length; i++) {
+                    if (i == selected) {
+                        for (var x = 0; x < types[i].subs.length; x++) {
+                            chartData.push({
+                                type: types[i].subs[x].type,
+                                percent: types[i].subs[x].percent,
+                                color: types[i].color,
+                                pulled: true
+                            });
+                        }
+                    } else {
+                        chartData.push({
+                            type: types[i].type,
+                            percent: types[i].percent,
+                            color: types[i].color,
+                            id: i
+                        });
+                    }
                 }
-            } else {
-                chartData.push({
-                    type: types[i].type,
-                    percent: types[i].percent,
-                    color: types[i].color,
-                    id: i
-                });
+                return chartData;
             }
+
+            pieSeries.slices.template.events.on("hit", function (event) {
+                if (event.target.dataItem.dataContext.id != undefined) {
+                    selected = event.target.dataItem.dataContext.id;
+                } else {
+                    selected = undefined;
+                }
+                chart.data = generateChartData();
+            });
+        });
+    </script>
+
+    <!-- Toastr -->
+    <script src="https://gestao.co.in/assets/global/toastr/toastr.min.js"></script>
+
+    <!-- Initialize common scripts for frontend and backend here -->
+    <!-- SHOW TOASTR NOTIFIVATION -->
+
+
+
+    <script type="text/javascript">
+        "use strict";
+
+        function switch_language(language) {
+            $.ajax({
+                url: 'https://gestao.co.in/site/site_language',
+                type: 'post',
+                data: {
+                    language: language
+                },
+                success: function (response) {
+                    setTimeout(function () {
+                        location.reload();
+                    }, 500);
+                }
+            });
         }
-        return chartData;
-    }
-
-    pieSeries.slices.template.events.on("hit", function(event) {
-        if (event.target.dataItem.dataContext.id != undefined) {
-            selected = event.target.dataItem.dataContext.id;
-        } else {
-            selected = undefined;
-        }
-        chart.data = generateChartData();
-    });
-});
-</script>
-
-<!-- Toastr -->
-<script src="https://gestao.co.in/assets/global/toastr/toastr.min.js"></script>
-
-<!-- Initialize common scripts for frontend and backend here -->
-<!-- SHOW TOASTR NOTIFIVATION -->
-
-
-
-<script type="text/javascript">
-	"use strict";
-
-	function switch_language(language) {
-		$.ajax({
-			url: 'https://gestao.co.in/site/site_language',
-			type: 'post',
-			data: {
-				language: language
-			},
-			success: function(response) {
-				setTimeout(function() {
-					location.reload();
-				}, 500);
-			}
-		});
-	}
-</script>
+    </script>
 
     <!-- MODAL SCRIPTS -->
     <script type="text/javascript">
-    function showAjaxModal(url, header) {
-        // SHOWING AJAX PRELOADER IMAGE
-        jQuery('#scrollable-modal .modal-body').html('<div class="text-center"><img src="https://gestao.co.in/assets/backend/img/loader.gif" /></div>');
-        jQuery('#scrollable-modal .modal-title').html('...');
-        // LOADING THE AJAX MODAL
-        jQuery('#scrollable-modal').modal('show', {
-            backdrop: 'true'
-        });
+        function showAjaxModal(url, header) {
+            // SHOWING AJAX PRELOADER IMAGE
+            jQuery('#scrollable-modal .modal-body').html('<div class="text-center"><img src="https://gestao.co.in/assets/backend/img/loader.gif" /></div>');
+            jQuery('#scrollable-modal .modal-title').html('...');
+            // LOADING THE AJAX MODAL
+            jQuery('#scrollable-modal').modal('show', {
+                backdrop: 'true'
+            });
 
-        // SHOW AJAX RESPONSE ON REQUEST SUCCESS
-        $.ajax({
-            url: url,
-            success: function(response) {
-                jQuery('#scrollable-modal .modal-body').html(response);
-                jQuery('#scrollable-modal .modal-title').html(header);
-            }
-        });
-    }
+            // SHOW AJAX RESPONSE ON REQUEST SUCCESS
+            $.ajax({
+                url: url,
+                success: function (response) {
+                    jQuery('#scrollable-modal .modal-body').html(response);
+                    jQuery('#scrollable-modal .modal-title').html(header);
+                }
+            });
+        }
 
-    function showLargeModal(url, header) {
-        // SHOWING AJAX PRELOADER IMAGE
-        jQuery('#large-modal .modal-body').html('<div class="text-center mt-200"><img src="https://gestao.co.in/assets/global/bg-pattern-light.svg" height = "50px" /></div>');
-        jQuery('#large-modal .modal-title').html('...');
-        // LOADING THE AJAX MODAL
-        jQuery('#large-modal').modal('show', {
-            backdrop: 'true'
-        });
+        function showLargeModal(url, header) {
+            // SHOWING AJAX PRELOADER IMAGE
+            jQuery('#large-modal .modal-body').html('<div class="text-center mt-200"><img src="https://gestao.co.in/assets/global/bg-pattern-light.svg" height = "50px" /></div>');
+            jQuery('#large-modal .modal-title').html('...');
+            // LOADING THE AJAX MODAL
+            jQuery('#large-modal').modal('show', {
+                backdrop: 'true'
+            });
 
-        // SHOW AJAX RESPONSE ON REQUEST SUCCESS
-        $.ajax({
-            url: url,
-            success: function(response) {
-                jQuery('#large-modal .modal-body').html(response);
-                jQuery('#large-modal .modal-title').html(header);
-            }
-        });
-    }
-</script>
+            // SHOW AJAX RESPONSE ON REQUEST SUCCESS
+            $.ajax({
+                url: url,
+                success: function (response) {
+                    jQuery('#large-modal .modal-body').html(response);
+                    jQuery('#large-modal .modal-title').html(header);
+                }
+            });
+        }
+    </script>
 
-<!-- (Large Modal)-->
-<div class="modal fade" id="large-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="myLargeModalLabel">Large modal</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-            </div>
-            <div class="modal-body">
-                ...
-            </div>
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-</div>
-
-<!-- Scrollable modal -->
-<div class="modal fade" id="scrollable-modal" tabindex="-1" role="dialog" aria-labelledby="scrollableModalTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-scrollable" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="scrollableModalTitle">Modal title</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body ml-2 mr-2">
-
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-</div>
-
-<script type="text/javascript">
-    function confirm_modal(delete_url) {
-        jQuery('#alert-modal').modal('show', {
-            backdrop: 'static'
-        });
-        document.getElementById('update_link').setAttribute('href', delete_url);
-    }
-</script>
-
-<!-- Info Alert Modal -->
-<div id="alert-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog modal-sm">
-        <div class="modal-content">
-            <div class="modal-body p-4">
-                <div class="text-center">
-                    <i class="dripicons-information h1 text-info"></i>
-                    <h4 class="mt-2">Heads up!</h4>
-                    <p class="mt-3">Are you sure?</p>
-                    <button type="button" class="btn btn-info my-2" data-dismiss="modal">Cancel</button>
-                    <a href="#" id="update_link" class="btn btn-danger my-2">Continue</a>
+    <!-- (Large Modal)-->
+    <div class="modal fade" id="large-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myLargeModalLabel">Large modal</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                 </div>
+                <div class="modal-body">
+                    ...
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div>
+
+    <!-- Scrollable modal -->
+    <div class="modal fade" id="scrollable-modal" tabindex="-1" role="dialog" aria-labelledby="scrollableModalTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="scrollableModalTitle">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body ml-2 mr-2">
+
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div>
+
+    <script type="text/javascript">
+        function confirm_modal(delete_url) {
+            jQuery('#alert-modal').modal('show', {
+                backdrop: 'static'
+            });
+            document.getElementById('update_link').setAttribute('href', delete_url);
+        }
+    </script>
+
+    <!-- Info Alert Modal -->
+    <div id="alert-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-body p-4">
+                    <div class="text-center">
+                        <i class="dripicons-information h1 text-info"></i>
+                        <h4 class="mt-2">Heads up!</h4>
+                        <p class="mt-3">Are you sure?</p>
+                        <button type="button" class="btn btn-info my-2" data-dismiss="modal">Cancel</button>
+                        <a href="#" id="update_link" class="btn btn-danger my-2">Continue</a>
+                    </div>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+
+    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-analytics.js"></script>
+
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-firestore.js"></script>
+    <script src="../../firebase_auth/env.js"></script>
+    <script src="../../helpers/functions.js"></script>
+
+    <script>
+
+
+        if (!checkCookie()) {
+            // if cookie is found
+            console.log("Found")
+        }
+        else {
+            // if cookie is not found
+            console.log("Not Found")
+        }
+
+        function showCartModal(url, header) {
+            // SHOWING AJAX PRELOADER IMAGE
+            jQuery('#cart-modal .modal-body').html('...');
+            // LOADING THE AJAX MODAL
+            jQuery('#cart-modal').modal('show', {
+                backdrop: 'true'
+            });
+
+            // SHOW AJAX RESPONSE ON REQUEST SUCCESS
+            $.ajax({
+                url: url,
+                success: function (response) {
+                    jQuery('#cart-modal .modal-content').html(response);
+                }
+            });
+        }
+    </script>
+    <!--CART MODAL WITH AVATAR-->
+    <div class="modal fade" id="cart-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog cascading-modal modal-avatar modal-sm" role="document">
+            <!--Content-->
+            <div class="modal-content">
+
             </div>
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-
-
-<script>
-    function showCartModal(url, header) {
-        // SHOWING AJAX PRELOADER IMAGE
-        jQuery('#cart-modal .modal-body').html('...');
-        // LOADING THE AJAX MODAL
-        jQuery('#cart-modal').modal('show', {
-            backdrop: 'true'
-        });
-
-        // SHOW AJAX RESPONSE ON REQUEST SUCCESS
-        $.ajax({
-            url: url,
-            success: function(response) {
-                jQuery('#cart-modal .modal-content').html(response);
-            }
-        });
-    }
-</script>
-<!--CART MODAL WITH AVATAR-->
-<div class="modal fade" id="cart-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog cascading-modal modal-avatar modal-sm" role="document">
-        <!--Content-->
-        <div class="modal-content">
-
         </div>
     </div>
-</div>
 </body>
 
 </html>
