@@ -1103,12 +1103,13 @@
 
 
         if (!checkCookie()) {
-            // if cookie is found
-            console.log("Found")
+            // if cookie is Not found
+            // redirect to login page
+            window.location.href = "login.html";
         }
         else {
-            // if cookie is not found
-            console.log("Not Found")
+            // if cookie is  found
+            // console.log(" Found");
         }
 
         function showCartModal(url, header) {
