@@ -101,7 +101,7 @@
 
 		firebase.initializeApp(firebaseConfig);
 		firebase.analytics();
-
+		db = firebase.firestore(app);
 		// On form submit, connect to firebase and Add User
 
 		$('#register_form').submit(function (e) {
@@ -121,6 +121,7 @@
 					// Alert to user and then redirect to Dashboard
 					setCookie('gestaoLogin', user, 1);
 
+					addDataToFirestore('Users',data.name, data)
 					alert('User Registered!');
 
 				})

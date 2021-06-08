@@ -53,3 +53,25 @@ function checkCookie() {
     return false;
   }
 }
+
+
+// Function to add new data to collection
+// Input: String (Collection Name),String (Document Name),String (Collection Name),
+// Output: Boolean (True/False)
+
+
+db = firebase.firestore(app);
+function addDataToFirestore(collection,document, value){
+  db.collection("cities").doc("LA").set({
+    name: "Los Angeles",
+    state: "CA",
+    country: "USA"
+  })
+  .then(() => {
+    console.log("Document successfully written!");
+  })
+  .catch((error) => {
+    console.error("Error writing document: ", error);
+  });
+}
+
