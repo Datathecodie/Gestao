@@ -56,17 +56,12 @@ function checkCookie() {
 
 
 // Function to add new data to collection
-// Input: String (Collection Name),String (Document Name),String (Collection Name),
+// Input: String (Collection Name),String (Document Name), Object (Data in  JSON),
 // Output: Boolean (True/False)
 
-
-db = firebase.firestore(app);
 function addDataToFirestore(collection,document, value){
-  db.collection("cities").doc("LA").set({
-    name: "Los Angeles",
-    state: "CA",
-    country: "USA"
-  })
+  
+  db.collection(collection).doc(document).set(value)
   .then(() => {
     console.log("Document successfully written!");
   })
