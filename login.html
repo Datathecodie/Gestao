@@ -176,7 +176,7 @@
 				.then((userCredential) => {
 					// Signed in
 					var user = userCredential.user;
-					// ...
+					// Refer USer Collection
 					setCookie('gestaoLogin', user, 1);
 					window.location.href = "dashboard.html";
 				})

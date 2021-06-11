@@ -99,9 +99,9 @@
 	<script type="text/javascript">
 		"use strict";
 
-		firebase.initializeApp(firebaseConfig);
+		var app = firebase.initializeApp(firebaseConfig);
 		firebase.analytics();
-		db = firebase.firestore(app);
+		var db = firebase.firestore(app);
 		// On form submit, connect to firebase and Add User
 
 		$('#register_form').submit(function (e) {
@@ -121,6 +121,7 @@
 					// Alert to user and then redirect to Dashboard
 					setCookie('gestaoLogin', user, 1);
 
+					// Use UUID for collection name, instead data.name
 					addDataToFirestore('Users',data.name, data)
 					alert('User Registered!');
 
