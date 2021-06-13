@@ -117,12 +117,19 @@
 					// Signed in 
 					var user = userCredential.user;
 					// Store that in cookie and use it when required.
-					console.log(user);
+					var currentUserUid = firebase.auth().currentUser.uid;
 					// Alert to user and then redirect to Dashboard
-					setCookie('gestaoLogin', user, 1);
+					setCookie('gestaoLogin', data, 1);
 
 					// Use UUID for collection name, instead data.name
-					addDataToFirestore('Users',data.name, data)
+					//addDataToFirestore('Users',currentUserUid, data)
+					db.collection('Users').doc(currentUserUid).set(data)
+					.then(() => {
+						console.log("Document successfully written!");
+					})
+					.catch((error) => {
+						console.error("Error writing document: ", error);
+					});
 					alert('User Registered!');
 
 				})
