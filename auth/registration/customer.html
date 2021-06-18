@@ -95,6 +95,7 @@
 	<script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-firestore.js"></script>
 	<script src="../../firebase_auth/env.js"></script>
 	<script src="../../helpers/functions.js"></script>
+	<script src="../../helpers/defaults.js"></script>
 
 	<script type="text/javascript">
 		"use strict";
@@ -112,6 +113,9 @@
 
 			var email = data.email;
 			var password = data.password;
+			delete data.password;
+			// todo: change datatype for Phone Number to Long int
+			// add create_time (Timestamp) in the Form field
 			firebase.auth().createUserWithEmailAndPassword(email, password)
 				.then((userCredential) => {
 					// Signed in 
@@ -119,17 +123,10 @@
 					// Store that in cookie and use it when required.
 					var currentUserUid = firebase.auth().currentUser.uid;
 					// Alert to user and then redirect to Dashboard
-					setCookie('gestaoLogin', data, 1);
+					setCookie(names.login_cookie, data, 1);
 
 					// Use UUID for collection name, instead data.name
-					//addDataToFirestore('Users',currentUserUid, data)
-					db.collection('Users').doc(currentUserUid).set(data)
-					.then(() => {
-						console.log("Document successfully written!");
-					})
-					.catch((error) => {
-						console.error("Error writing document: ", error);
-					});
+					addDataToFirestore(names.users,currentUserUid, data);
 					alert('User Registered!');
 
 				})
